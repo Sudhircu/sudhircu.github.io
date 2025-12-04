@@ -15,8 +15,46 @@
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css"/>
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/styles.css" rel="stylesheet"/>
+
+<style>
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Dark theme styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+body.dark-mode .badge {
+    opacity: 0.9;
+}
+
+/* Toggle button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+
 </head>
 <body id="page-top">
+<button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
 <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -90,17 +128,17 @@ SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-p
   <div class="resume-section-content">
     <h2 class="mb-5">Skills & Competencies</h2>
     <div class="row">
-      <!-- Leadership & Strategy -->
+      <!-- Leadership & Governance -->
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Leadership & Strategy</h5>
+            <h5 class="card-title"><i class="fas fa-user-tie"></i> Leadership & Governance</h5>
             <p>
               <span class="badge bg-primary">Leadership & Strategy</span>
-              <span class="badge bg-primary">Strategic Direction & Planning</span>
+              <span class="badge bg-primary">Strategic Planning</span>
               <span class="badge bg-primary">Governance & Board Reporting</span>
-              <span class="badge bg-primary">Budgeting & Cost-Benefit Analysis</span>
-              <span class="badge bg-primary">Team Leadership & Development</span>
+              <span class="badge bg-primary">Budgeting & Cost Analysis</span>
+              <span class="badge bg-primary">Team Development</span>
             </p>
           </div>
         </div>
@@ -110,28 +148,28 @@ SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-p
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Risk & Compliance</h5>
+            <h5 class="card-title"><i class="fas fa-shield-alt"></i> Risk & Compliance</h5>
             <p>
               <span class="badge bg-success">Risk Management Frameworks</span>
-              <span class="badge bg-success">Internal Audits & Risk Registers</span>
-              <span class="badge bg-success">Regulatory Compliance (PCI-DSS, GDPR, SOC2/3, CMMI, ISO 15408, ISO 20001, RBI)</span>
-              <span class="badge bg-success">TPRM, CSRA, CSA, RCM, Maturity</span>
-              <span class="badge bg-success">Data Privacy & Protection (DPDPA)</span>
+              <span class="badge bg-success">Internal Audits</span>
+              <span class="badge bg-success">Regulatory Compliance (PCI-DSS, GDPR, SOC2/3, ISO 27001, ISO 22301, RBI)</span>
+              <span class="badge bg-success">Third-Party Risk Management</span>
+              <span class="badge bg-success">Data Privacy (DPDPA)</span>
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Security Technologies -->
+      <!-- Cybersecurity Technologies -->
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Security Technologies</h5>
+            <h5 class="card-title"><i class="fas fa-lock"></i> Cybersecurity Technologies</h5>
             <p>
-              <span class="badge bg-info">SIEM (LogRhythm, Splunk, ManageEngine)</span>
+              <span class="badge bg-info">SIEM (Splunk, LogRhythm)</span>
               <span class="badge bg-info">Endpoint Protection (EDR, XDR, DLP)</span>
               <span class="badge bg-info">IAM, MFA, SSO</span>
-              <span class="badge bg-info">Microsoft Purview, Defender, Intune</span>
+              <span class="badge bg-info">Microsoft Defender, Intune</span>
               <span class="badge bg-info">Archer, SailPoint, Okta</span>
             </p>
           </div>
@@ -142,15 +180,13 @@ SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-p
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Cloud & Infrastructure</h5>
+            <h5 class="card-title"><i class="fas fa-cloud"></i> Cloud & Infrastructure</h5>
             <p>
               <span class="badge bg-warning text-dark">Azure</span>
               <span class="badge bg-warning text-dark">AWS</span>
               <span class="badge bg-warning text-dark">GCP</span>
-              <span class="badge bg-warning text-dark">ServiceNow</span>
               <span class="badge bg-warning text-dark">Zero Trust Architecture</span>
-              <span class="badge bg-warning text-dark">Firewall & IDS/IPS (NSX, Palo Alto, Check Point, Cisco, Sophos)</span>
-              <span class="badge bg-warning text-dark">OT Security, VDI, VPN</span>
+              <span class="badge bg-warning text-dark">Firewall & IDS/IPS</span>
             </p>
           </div>
         </div>
@@ -160,15 +196,13 @@ SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-p
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Cybersecurity Operations</h5>
+            <h5 class="card-title"><i class="fas fa-bug"></i> Cybersecurity Operations</h5>
             <p>
-              <span class="badge bg-danger">Vulnerability Management (Nessus, Rapid7, Qualys, OpenVAS)</span>
-              <span class="badge bg-danger">Threat Intelligence (MITRE, IOC)</span>
-              <span class="badge bg-danger">Incident Response & RCA</span>
+              <span class="badge bg-danger">Vulnerability Management</span>
+              <span class="badge bg-danger">Threat Intelligence</span>
+              <span class="badge bg-danger">Incident Response</span>
               <span class="badge bg-danger">Red Teaming & Threat Hunting</span>
-              <span class="badge bg-danger">Penetration Testing & VA/PT</span>
-              <span class="badge bg-danger">Forensic Analysis & Anomaly Detection</span>
-              <span class="badge bg-danger">Secure SDLC, OWASP, SonarQube</span>
+              <span class="badge bg-danger">Penetration Testing</span>
             </p>
           </div>
         </div>
@@ -178,16 +212,14 @@ SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-p
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Tools & Automation</h5>
+            <h5 class="card-title"><i class="fas fa-tools"></i> Tools & Automation</h5>
             <p>
               <span class="badge bg-secondary">Power BI</span>
               <span class="badge bg-secondary">M365</span>
               <span class="badge bg-secondary">SharePoint</span>
-              <span class="badge bg-secondary">ServiceDesk Plus</span>
-              <span class="badge bg-secondary">DR Automation (CP)</span>
-              <span class="badge bg-secondary">Jira, Confluence, ASPIA</span>
-              <span class="badge bg-secondary">CI/CD Pipeline (Jenkins, Git, Bitbucket)</span>
-              <span class="badge bg-secondary">Compliance Automation</span>
+              <span class="badge bg-secondary">ServiceNow</span>
+              <span class="badge bg-secondary">Jira, Confluence</span>
+              <span class="badge bg-secondary">CI/CD (Jenkins, Git)</span>
             </p>
           </div>
         </div>
@@ -197,10 +229,10 @@ SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-p
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Programming & Emerging Tech</h5>
+            <h5 class="card-title"><i class="fas fa-code"></i> Programming & Emerging Tech</h5>
             <p>
-              <span class="badge bg-dark">HTML, DHTML, XML, ASP</span>
-              <span class="badge bg-dark">JavaScript, CSS, C, C++, Java, VB.Net, Visual Basic</span>
+              <span class="badge bg-dark">HTML, CSS, JavaScript</span>
+              <span class="badge bg-dark">Java, C, C++</span>
               <span class="badge bg-dark">AI/ML in Cybersecurity</span>
               <span class="badge bg-dark">Secure Coding</span>
             </p>
@@ -208,16 +240,15 @@ SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-p
         </div>
       </div>
 
-      <!-- Project & Process Excellence -->
+      <!-- Process Excellence -->
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Project & Process Excellence</h5>
+            <h5 class="card-title"><i class="fas fa-project-diagram"></i> Process Excellence</h5>
             <p>
-              <span class="badge bg-light text-dark">Agile, Waterfall, ITIL, RACI</span>
-              <span class="badge bg-light text-dark">Metrics & KPIs, Dashboards</span>
+              <span class="badge bg-light text-dark">Agile, Waterfall, ITIL</span>
+              <span class="badge bg-light text-dark">Metrics & KPIs</span>
               <span class="badge bg-light text-dark">Business Continuity & DRP</span>
-              <span class="badge bg-light text-dark">Project & Operational Planning</span>
             </p>
           </div>
         </div>
@@ -245,5 +276,23 @@ SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-p
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+
+<script>
+// Dark/Light theme toggle
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+}
+
+// Add collapsible functionality for cards on mobile
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+            card.classList.toggle('expanded');
+        }
+    });
+});
+</script>
+
 </body>
 </html>
