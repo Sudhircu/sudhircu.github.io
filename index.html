@@ -1,335 +1,553 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sudhir C — Cybersecurity, Risk & Compliance Portfolio</title>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sudhir C — Cybersecurity, Risk & Compliance Portfolio" />
+  <title>Sudhir C | Cybersecurity, Risk & Compliance</title>
+
   <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
+
+  <!-- Icons (Font Awesome) -->
+  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
+
+  <!-- Fonts -->
+  https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap
+
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    /* Spacing & layout */
-    .resume-section { padding: 1.25rem 0; }
-    .resume-section h2 { margin-bottom: 1rem; }
-    .resume-section h3 { margin-bottom: .75rem; }
-    section + section { margin-top: 1rem; }
-    .badge { margin: .2rem; }
-    /* Sticky navbar */
-    .navbar { position: sticky; top: 0; z-index: 1030; }
-    .navbar-brand { font-weight: 600; }
+    :root{
+      --bg: #0b0f14;
+      --bg-soft: #0f141b;
+      --text: #e8edf2;
+      --muted: #a9b4c2;
+      --primary: #6ee7ff;
+      --accent: #a78bfa;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --glass: rgba(255,255,255,0.08);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    /* Light theme variables */
+    .light {
+      --bg: #f7f9fc;
+      --bg-soft: #ffffff;
+      --text: #1a1f26;
+      --muted: #5b6573;
+      --primary: #0ea5e9;
+      --accent: #7c3aed;
+      --card: #ffffff;
+      --border: rgba(0,0,0,0.08);
+      --glass: rgba(255,255,255,0.9);
+      --shadow: 0 10px 30px rgba(16,24,40,0.08);
+    }
+
+    html{scroll-behavior:smooth;}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at -10% -10%, rgba(124,58,237,0.18), transparent 40%),
+        radial-gradient(900px 500px at 110% 10%, rgba(14,165,233,0.18), transparent 45%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* Navbar (glassmorphism) */
+    .navbar{
+      backdrop-filter: saturate(1.2) blur(10px);
+      background-color: rgba(12,16,20,0.55);
+      border-bottom: 1px solid var(--border);
+    }
+    .light .navbar{
+      background-color: rgba(255,255,255,0.85);
+    }
+    .navbar .nav-link{
+      color: var(--text);
+      opacity: 0.9;
+    }
+    .navbar .nav-link:hover, .navbar .nav-link.active{opacity:1;color:var(--primary);}
+
+    /* Hero */
+    .hero{
+      padding: 96px 0 48px;
+    }
+    .hero-card{
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero-gradient{
+      background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(14,165,233,0.35));
+      height: 6px;
+    }
+
+    /* Sections */
+    section{
+      padding: 64px 0;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    section.visible{opacity:1; transform: translateY(0);}
+
     /* Cards */
-    .card { border: 1px solid #e9ecef; }
-    .card:hover { transform: translateY(-2px); transition: transform .2s ease; }
-    /* Fade-in on scroll */
-    .fade-in { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-    /* Dark mode */
-    body.dark-mode { background-color: #121212; color: #f1f1f1; }
-    body.dark-mode .card { background-color: #1e1e1e; color: #f1f1f1; border-color: #2a2a2a; }
-    body.dark-mode .navbar { background-color: #1e1e1e !important; }
-    .theme-toggle { position: fixed; right: 16px; bottom: 16px; z-index: 1040; }
-    /* Compact lists */
-    .list-compact li { margin-bottom: .5rem; }
+    .card-modern{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .card-modern:hover{
+      transform: translateY(-6px);
+      border-color: rgba(110,231,255,0.35);
+      box-shadow: 0 14px 40px rgba(14,165,233,0.25);
+    }
+
+    /* Headings */
+    .section-title{
+      font-weight: 700;
+      letter-spacing: .2px;
+      margin-bottom: 24px;
+    }
+
+    /* Badges for certifications */
+    .badge-pill{
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      margin: 6px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      color: var(--text);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-pill .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 3px rgba(110,231,255,0.25);
+    }
+
+    /* Lists */
+    .list-compact li{margin-bottom: .5rem;}
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      color: var(--muted);
+    }
+
+    /* Theme toggle button */
+    .theme-toggle{
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--text);
+      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .theme-toggle:hover{color: var(--primary);}
+
+    /* Link styles */
+    a{color: var(--primary); text-decoration: none;}
+    a:hover{opacity:.9;}
+
+    /* Utilities */
+    .muted{color: var(--muted);}
+    .soft{color: #c5ced8;}
+    .divider{border-top: 1px dashed var(--border);}
   </style>
 </head>
 <body id="page-top">
-  <!-- Nav -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#page-top">Sudhir C</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      #page-topSudhir&nbsp;C</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbars">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">#aboutAbout</a></li>
+          <li class="nav-item">#experienceExperience</a></li>
+          <li class="nav-item">#educationEducation</a></li>
+          <li class="nav-item">#skillsSkills</a></li>
+          <li class="nav-item">#certificationsCertifications</a></li>
+          <li class="nav-item">#interestsInterests</a></li>
+          <li class="nav-item ms-lg-3">
+            <button id="themeBtn" class="theme-toggle">
+              <i class="fa-regular fa-sun me-1"></i><span id="themeText">Light</span>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- About -->
-  <section class="resume-section fade-in" id="about">
-    <div class="container">
-      <h2>About</h2>
-      <div class="row g-3">
+  <!-- HERO / ABOUT -->
+  <header class="hero container">
+    <div class="hero-card p-4 p-md-5">
+      <div class="hero-gradient"></div>
+      <div class="row align-items-center g-4">
         <div class="col-lg-8">
-          <h1 class="h3 mb-1">Senior Manager — Cybersecurity, Risk & Compliance</h1>
-          <p class="mb-2">17+ years of experience across Banking, IT, ITES, and Manufacturing. Proven expertise in ISO 27001, ISO 22301, RBI Cybersecurity Framework, BCP/DR strategies, Risk Assessments, and Cybersecurity Awareness Programs. Focused on driving <em>Beyond Compliance</em>, strengthening security posture, and ensuring business resilience through robust governance frameworks.</p>
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item"><i class="fa-solid fa-location-dot"></i> Bangalore, India</li>
-            <li class="list-inline-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:sudhir.cu@gmail.com">sudhir.cu@gmail.com</a></li>
-            <li class="list-inline-item"><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/sudhir-c2022/" target="_blank">LinkedIn</a></li>
-            <li class="list-inline-item"><i class="fa-brands fa-github"></i> <a href="https://sudhircu.github.io/" target="_blank">Portfolio</a></li>
-          </ul>
+          <h1 class="fw-bold">Senior Manager — Cybersecurity, Risk & Compliance</h1>
+          <p class="lead soft mb-3">
+            17+ years across Banking, IT, ITES & Manufacturing. Expertise in ISO 27001, ISO 22301, RBI Cybersecurity Framework,
+            BCP/DR, risk assessments & cybersecurity awareness. Driving “Beyond Compliance,” stronger security posture & business resilience via robust governance frameworks. [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt)
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <span class="muted"><i class="fa-solid fa-location-dot me-2"></i>Bangalore, India</span>
+            mailto:sudhir.cu@gmail.com<i class="fa-regular fa-envelope me-2"></i>sudhir.cu@gmail.com</a>
+            https://www.linkedin.com/in/sudhir-c2022/<i class="fa-brands fa-linkedin me-2"></i>LinkedIn</a>
+            https://sudhircu.github.io/<i class="fa-brands fa-github me-2"></i>Portfolio</a>
+          </div>
+          <div class="mt-4">
+            <div class="badge-pill"><span class="dot"></span>MCA</div>
+            <div class="badge-pill"><span class="dot"></span>CISM</div>
+            <div class="badge-pill"><span class="dot"></span>CEH</div>
+            <div class="badge-pill"><span class="dot"></span>CCMP</div>
+            <div class="badge-pill"><span class="dot"></span>CDPO</div>
+            <div class="badge-pill"><span class="dot"></span>ISO 27001 LA</div>
+            <div class="badge-pill"><span class="dot"></span>CSSBB</div>
+            <div class="badge-pill"><span class="dot"></span>Certified Cyber Mentor</div>
+            <!-- Derived from your uploaded content -->
+          </div>
         </div>
         <div class="col-lg-4">
-          <div class="card p-3">
-            <h3 class="h6">Key Credentials</h3>
-            <div>
-              <span class="badge bg-primary">MCA</span>
-              <span class="badge bg-primary">CISM</span>
-              <span class="badge bg-primary">CEH</span>
-              <span class="badge bg-primary">CCMP</span>
-              <span class="badge bg-primary">CDPO</span>
-              <span class="badge bg-primary">ISO 27001 LA</span>
-              <span class="badge bg-primary">CSSBB</span>
-              <span class="badge bg-primary">Certified Cyber Mentor</span>
+          <div class="card-modern p-4">
+            <h5 class="mb-3">Quick Actions</h5>
+            <div class="d-grid gap-2">
+              <!-- Replace file name with your actual resume asset if needed -->
+              Sudhir_C_MCA_CISM_CEH_17yrs_v26.pdf
+                <i class="fa-solid fa-download me-2"></i>Download Resume
+              </a>
+              #contact
+                <i class="fa-solid fa-paper-plane me-2"></i>Get in Touch
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Experience -->
-  <section class="resume-section fade-in" id="experience">
-    <div class="container">
-      <h2>Experience</h2>
-      <div class="row g-3">
-        <div class="col-12">
-          <div class="card p-3">
-            <h3 class="h5 mb-1">Senior Manager — Risk & Compliance, Cybersecurity</h3>
-            <div class="text-muted mb-2">IFTAS (RBI Subsidiary) · Mar 2025 – Present</div>
-            <ul class="list-compact mb-0">
-              <li>Leading ISO 27001; implementing ISO 22301 BCMS; RBI Framework; enterprise risk assessments.</li>
-              <li>Driving “Beyond Compliance” initiatives and KRIs for executive reporting.</li>
-            </ul>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="row g-4">
+      <!-- IFTAS -->
+      <div class="col-md-6">
+        <div class="card-modern p-4 h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <h5 class="fw-semibold mb-1">Senior Manager — Risk & Compliance, Cybersecurity</h5>
+            <span class="muted">Mar 2025 – Present</span>
           </div>
+          <p class="muted mb-1">IFTAS (RBI Subsidiary)</p>
+          <ul class="list-compact mt-3">
+            <li>Leading ISO 27001; implementing ISO 22301 BCMS; RBI Framework; enterprise risk assessments.</li>
+            <li>Driving “Beyond Compliance” initiatives and KRIs for executive reporting.</li>
+          </ul>
+          <!-- Content referenced from your upload -->
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-12">
-          <div class="card p-3">
-            <h3 class="h5 mb-1">Manager — IT, Information Security</h3>
-            <div class="text-muted mb-2">ICT Service Management (Wistron) · Jul 2023 – Dec 2024</div>
-            <ul class="list-compact mb-0">
-              <li>Ensured compliance with ISO 27001, NIST CSF, PCI DSS, and CMMI.</li>
-              <li>Established governance, controls, and audit readiness.</li>
-            </ul>
+      </div>
+      <!-- Wistron -->
+      <div class="col-md-6">
+        <div class="card-modern p-4 h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <h5 class="fw-semibold mb-1">Manager — IT, Information Security</h5>
+            <span class="muted">Jul 2023 – Dec 2024</span>
           </div>
+          <p class="muted mb-1">ICT Service Management (Wistron)</p>
+          <ul class="list-compact mt-3">
+            <li>Ensured compliance with ISO 27001, NIST CSF, PCI DSS, and CMMI.</li>
+            <li>Established governance, controls, and audit readiness.</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-12">
-          <div class="card p-3">
-            <h3 class="h5 mb-1">Senior Manager — Global Cybersecurity</h3>
-            <div class="text-muted mb-2">State Street Corporation · Sep 2022 – Jul 2023</div>
-            <ul class="list-compact mb-0">
-              <li>Led First Line of Risk & Controls (FLRC) aligned to NIST CSF, ISO 27001, GDPR.</li>
-              <li>Supported global regulatory audits (FFIEC, ARPA, HKMA, DORA, SOC2, NFA, CHAPS).</li>
-            </ul>
+      </div>
+      <!-- State Street -->
+      <div class="col-md-6">
+        <div class="card-modern p-4 h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <h5 class="fw-semibold mb-1">Senior Manager — Global Cybersecurity</h5>
+            <span class="muted">Sep 2022 – Jul 2023</span>
           </div>
+          <p class="muted mb-1">State Street Corporation</p>
+          <ul class="list-compact mt-3">
+            <li>Led First Line of Risk & Controls (FLRC) aligned to NIST CSF, ISO 27001, GDPR.</li>
+            <li>Supported global regulatory audits (FFIEC, ARPA, HKMA, DORA, SOC2, NFA, CHAPS).</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-12">
-          <div class="card p-3">
-            <h3 class="h5 mb-1">Manager — IT, Information Security</h3>
-            <div class="text-muted mb-2">ICT Service Management (Wistron) · Jan 2016 – Sep 2022</div>
-            <ul class="list-compact mb-0">
-              <li>Led ISO 27001, NIST, PCI DSS, OT Security and CMMI implementations.</li>
-              <li>Built KRIs, risk appetite, and control matrices.</li>
-            </ul>
+      </div>
+      <!-- Wistron earlier -->
+      <div class="col-md-6">
+        <div class="card-modern p-4 h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <h5 class="fw-semibold mb-1">Manager — IT, Information Security</h5>
+            <span class="muted">Jan 2016 – Sep 2022</span>
           </div>
+          <p class="muted mb-1">ICT Service Management (Wistron)</p>
+          <ul class="list-compact mt-3">
+            <li>Led ISO 27001, NIST, PCI DSS, OT Security and CMMI implementations.</li>
+            <li>Built KRIs, risk appetite, and control matrices.</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section class="resume-section fade-in" id="education">
-    <div class="container">
-      <h2>Education</h2>
-      <div class="row g-3">
-        <div class="col-12">
-          <div class="card p-3">
-            <h3 class="h5 mb-1">Bangalore University — Master of Computer Applications (MCA)</h3>
-            <div class="text-muted mb-2">Computer Science · First Class · Jun 2005 – May 2008</div>
-          </div>
+  <!-- EDUCATION -->
+  <section id="education" class="container">
+    <h2 class="section-title">Education</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-bold mb-1">Bangalore University — Master of Computer Applications (MCA)</h6>
+          <p class="muted mb-2">Computer Science · First Class · Jun 2005 – May 2008</p>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-12">
-          <div class="card p-3">
-            <h3 class="h5 mb-1">Bangalore University — Bachelor of Science</h3>
-            <div class="text-muted mb-2">Computers, Mathematics & Electronics · First Class · Jun 2002 – May 2005</div>
-          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-bold mb-1">Bangalore University — Bachelor of Science</h6>
+          <p class="muted mb-2">Computers, Mathematics & Electronics · First Class · Jun 2002 – May 2005</p>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills & Competencies -->
-  <section class="resume-section fade-in" id="skills">
-    <div class="container">
-      <h2>Skills & Competencies</h2>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h3 class="h6"><i class="fa-solid fa-user-tie"></i> Leadership & Governance</h3>
-            <div>
-              <span class="badge bg-primary">Leadership & Strategy</span>
-              <span class="badge bg-primary">Strategic Planning</span>
-              <span class="badge bg-primary">Governance & Board Reporting</span>
-              <span class="badge bg-primary">Budgeting & Cost Analysis</span>
-              <span class="badge bg-primary">Team Development</span>
-            </div>
-          </div>
+  <!-- SKILLS -->
+  <section id="skills" class="container">
+    <h2 class="section-title">Skills & Competencies</h2>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-semibold">Leadership & Governance</h6>
+          <ul class="list-compact mt-2">
+            <li>Leadership & Strategy</li>
+            <li>Strategic Planning</li>
+            <li>Governance & Board Reporting</li>
+            <li>Budgeting & Cost Analysis</li>
+            <li>Team Development</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h3 class="h6"><i class="fa-solid fa-shield"></i> Risk & Compliance</h3>
-            <div>
-              <span class="badge bg-success">Risk Mgmt Frameworks</span>
-              <span class="badge bg-success">Internal Audits & Risk Registers</span>
-              <span class="badge bg-success">Compliance (PCI-DSS, GDPR, SOC2/3, ISO 27001, ISO 22301, RBI)</span>
-              <span class="badge bg-success">TPRM</span>
-              <span class="badge bg-success">Data Privacy (DPDPA)</span>
-            </div>
-          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-semibold">Risk & Compliance</h6>
+          <ul class="list-compact mt-2">
+            <li>Risk Mgmt Frameworks; Internal Audits & Risk Registers</li>
+            <li>Compliance (PCI-DSS, GDPR, SOC2/3, ISO 27001, ISO 22301, RBI)</li>
+            <li>TPRM · Data Privacy (DPDPA)</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h3 class="h6"><i class="fa-solid fa-lock"></i> Security Technologies</h3>
-            <div>
-              <span class="badge bg-info">SIEM (LogRhythm, Splunk, ManageEngine)</span>
-              <span class="badge bg-info">Endpoint (EDR, XDR, DLP)</span>
-              <span class="badge bg-info">IAM, MFA, SSO</span>
-              <span class="badge bg-info">Microsoft Purview, Defender, Intune</span>
-              <span class="badge bg-info">Archer, SailPoint, Okta</span>
-            </div>
-          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-semibold">Security Technologies</h6>
+          <ul class="list-compact mt-2">
+            <li>SIEM (LogRhythm, Splunk, ManageEngine)</li>
+            <li>Endpoint (EDR, XDR, DLP)</li>
+            <li>IAM, MFA, SSO</li>
+            <li>Microsoft Purview, Defender, Intune</li>
+            <li>Archer, SailPoint, Okta</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h3 class="h6"><i class="fa-solid fa-cloud"></i> Cloud & Infrastructure</h3>
-            <div>
-              <span class="badge bg-warning text-dark">Azure</span>
-              <span class="badge bg-warning text-dark">AWS</span>
-              <span class="badge bg-warning text-dark">GCP</span>
-              <span class="badge bg-warning text-dark">Zero Trust</span>
-              <span class="badge bg-warning text-dark">Firewall & IDS/IPS</span>
-              <span class="badge bg-warning text-dark">OT Security, VDI, VPN</span>
-            </div>
-          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-semibold">Cloud & Infrastructure</h6>
+          <ul class="list-compact mt-2">
+            <li>Azure · AWS · GCP</li>
+            <li>Zero Trust · Firewall & IDS/IPS</li>
+            <li>OT Security · VDI · VPN</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h3 class="h6"><i class="fa-solid fa-bug"></i> Cybersecurity Operations</h3>
-            <div>
-              <span class="badge bg-danger">Vulnerability Mgmt (Nessus, Rapid7, Qualys, OpenVAS)</span>
-              <span class="badge bg-danger">Threat Intel (MITRE, IOC)</span>
-              <span class="badge bg-danger">Incident Response & RCA</span>
-              <span class="badge bg-danger">Red Teaming & Threat Hunting</span>
-              <span class="badge bg-danger">Penetration Testing & VA/PT</span>
-              <span class="badge bg-danger">Secure SDLC, OWASP, SonarQube</span>
-            </div>
-          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-semibold">Cybersecurity Operations</h6>
+          <ul class="list-compact mt-2">
+            <li>Vulnerability Mgmt (Nessus, Rapid7, Qualys, OpenVAS)</li>
+            <li>Threat Intel (MITRE, IOC)</li>
+            <li>Incident Response & RCA</li>
+            <li>Red Teaming & Threat Hunting</li>
+            <li>Penetration Testing & VA/PT</li>
+            <li>Secure SDLC, OWASP, SonarQube</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h3 class="h6"><i class="fa-solid fa-gears"></i> Tools & Automation</h3>
-            <div>
-              <span class="badge bg-secondary">Power BI</span>
-              <span class="badge bg-secondary">M365</span>
-              <span class="badge bg-secondary">SharePoint</span>
-              <span class="badge bg-secondary">ServiceNow, ServiceDesk Plus</span>
-              <span class="badge bg-secondary">Jira, Confluence</span>
-              <span class="badge bg-secondary">CI/CD (Jenkins, Git, Bitbucket)</span>
-              <span class="badge bg-secondary">Compliance Automation</span>
-            </div>
-          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-semibold">Tools & Automation</h6>
+          <ul class="list-compact mt-2">
+            <li>Power BI · M365 · SharePoint</li>
+            <li>ServiceNow, ServiceDesk Plus</li>
+            <li>Jira, Confluence</li>
+            <li>CI/CD (Jenkins, Git, Bitbucket)</li>
+            <li>Compliance Automation</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h3 class="h6"><i class="fa-solid fa-code"></i> Programming & Emerging Tech</h3>
-            <div>
-              <span class="badge bg-dark">HTML, DHTML, XML, ASP</span>
-              <span class="badge bg-dark">JavaScript, CSS, C, C++, Java, VB.Net, Visual Basic</span>
-              <span class="badge bg-dark">AI/ML in Cybersecurity</span>
-              <span class="badge bg-dark">Secure Coding</span>
-            </div>
-          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-semibold">Programming & Emerging Tech</h6>
+          <ul class="list-compact mt-2">
+            <li>HTML, DHTML, XML, ASP</li>
+            <li>JavaScript, CSS, C, C++, Java, VB.Net, Visual Basic</li>
+            <li>AI/ML in Cybersecurity · Secure Coding</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h3 class="h6"><i class="fa-solid fa-diagram-project"></i> Process Excellence</h3>
-            <div>
-              <span class="badge bg-light text-dark">Agile, Waterfall, ITIL, RACI</span>
-              <span class="badge bg-light text-dark">Metrics & KPIs, Dashboards</span>
-              <span class="badge bg-light text-dark">Business Continuity & DRP</span>
-              <span class="badge bg-light text-dark">Project & Operational Planning</span>
-            </div>
-          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card-modern p-4 h-100">
+          <h6 class="fw-semibold">Process Excellence</h6>
+          <ul class="list-compact mt-2">
+            <li>Agile · Waterfall · ITIL · RACI</li>
+            <li>Metrics & KPIs · Dashboards</li>
+            <li>Business Continuity & DRP</li>
+            <li>Project & Operational Planning</li>
+          </ul>
+          <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications -->
-  <section class="resume-section fade-in" id="certifications">
-    <div class="container">
-      <h2>Certifications</h2>
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="container">
+    <h2 class="section-title">Certifications</h2>
+    <div class="card-modern p-3">
       <div class="d-flex flex-wrap">
-        <span class="badge bg-success text-light p-2">CISM – Certified Information Security Manager</span>
-        <span class="badge bg-success text-light p-2">CEH – Certified Ethical Hacker V12</span>
-        <span class="badge bg-success text-light p-2">ISO 27001 LA – Certified Lead Auditor</span>
-        <span class="badge bg-success text-light p-2">CDPO - Certified Data Protection Officer</span>
-        <span class="badge bg-success text-light p-2">CCMP - Cybercrisis Management Professional</span>
-        <span class="badge bg-success text-light p-2">CISSP Risk Management</span>
-        <span class="badge bg-success text-light p-2">CompTIA CASP+: Assessing & Managing Risk</span>
-        <span class="badge bg-success text-light p-2">Operational Excellence Foundation</span>
-        <span class="badge bg-success text-light p-2">Root Cause and Business Analysis</span>
-        <span class="badge bg-success text-light p-2">Emergency Response & First Aid Training</span>
-        <span class="badge bg-success text-light p-2">CCM - Certified Cyber Mentor</span>
-        <span class="badge bg-success text-light p-2">CCNA IT Security Concepts</span>
-        <span class="badge bg-success text-light p-2">IMS 9001, 14001, 45001 – Certified Internal Auditor</span>
-        <span class="badge bg-success text-light p-2">CCNA Networking Components</span>
-        <span class="badge bg-success text-light p-2">Lean Six Sigma Black Belt</span>
-        <span class="badge bg-success text-light p-2">CISSP Secure Govern Principles</span>
-        <span class="badge bg-success text-light p-2">Lean Six Sigma Green Belt</span>
-        <span class="badge bg-success text-light p-2">CompTIA CASP+: Business Continuity</span>
-        <span class="badge bg-success text-light p-2">GDPR and Legal Compliance</span>
-        <span class="badge bg-success text-light p-2">CompTIA CASP+: Digital Forensics</span>
-        <span class="badge bg-success text-light p-2">CISSP Secure Design Principles</span>
-        <span class="badge bg-success text-light p-2">AWS - Cloud Practitioner</span>
+        <!-- Convert your full list to modern pill badges -->
+        <span class="badge-pill"><span class="dot"></span>CISM – Certified Information Security Manager</span>
+        <span class="badge-pill"><span class="dot"></span>CEH – Certified Ethical Hacker v12</span>
+        <span class="badge-pill"><span class="dot"></span>ISO 27001 LA – Lead Auditor</span>
+        <span class="badge-pill"><span class="dot"></span>CDPO – Certified Data Protection Officer</span>
+        <span class="badge-pill"><span class="dot"></span>CCMP – Cybercrisis Management Professional</span>
+        <span class="badge-pill"><span class="dot"></span>CISSP (principles & secure design)</span>
+        <span class="badge-pill"><span class="dot"></span>CompTIA CASP+ (Risk, BC, Forensics)</span>
+        <span class="badge-pill"><span class="dot"></span>Operational Excellence Foundation</span>
+        <span class="badge-pill"><span class="dot"></span>Root Cause & Business Analysis</span>
+        <span class="badge-pill"><span class="dot"></span>Emergency Response & First Aid</span>
+        <span class="badge-pill"><span class="dot"></span>CCM – Certified Cyber Mentor</span>
+        <span class="badge-pill"><span class="dot"></span>CCNA · IT Security Concepts · Networking Components</span>
+        <span class="badge-pill"><span class="dot"></span>IMS 9001/14001/45001 – Internal Auditor</span>
+        <span class="badge-pill"><span class="dot"></span>Lean Six Sigma Black Belt · Green Belt</span>
+        <span class="badge-pill"><span class="dot"></span>GDPR & Legal Compliance</span>
+        <span class="badge-pill"><span class="dot"></span>AWS – Cloud Practitioner</span>
+        <!-- All items sourced from your uploaded list -->
+        <!-- [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt) -->
       </div>
     </div>
   </section>
 
-  <!-- Interests -->
-  <section class="resume-section fade-in" id="interests">
-    <div class="container">
-      <h2>Interests</h2>
-      <p class="mb-0">Cybersecurity awareness storytelling, BCMS & DR drills, dashboarding with Power BI, and mentoring teams on secure coding and digital hygiene.</p>
+  <!-- INTERESTS -->
+  <section id="interests" class="container">
+    <h2 class="section-title">Interests</h2>
+    <div class="card-modern p-4">
+      <p class="mb-2">
+        Cybersecurity awareness storytelling, BCMS & DR drills, dashboarding with Power BI, and mentoring teams on secure coding & digital hygiene. [1](https://iftas1-my.sharepoint.com/personal/sudhir_c_iftas_in/Documents/Microsoft%20Copilot%20Chat%20Files/2.txt)
+      </p>
+      <div class="divider my-3"></div>
+      <div class="d-flex flex-wrap gap-3">
+        https://www.linkedin.com/in/sudhir-c2022/
+          <i class="fa-brands fa-linkedin me-2"></i>Connect on LinkedIn
+        </a>
+        https://sudhircu.github.io/
+          <i class="fa-brands fa-github me-2"></i>Visit Portfolio
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Theme toggle -->
-  <button class="btn btn-primary theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i> Theme</button>
+  <!-- CONTACT / FOOTER -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="card-modern p-4">
+      <p class="mb-0"><i class="fa-regular fa-envelope me-2"></i>mailto:sudhir.cu@gmail.comsudhir.cu@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer class="container text-center">
+    <small>© <span id="year"></span> Sudhir C · Cybersecurity, Risk & Compliance</small>
+  </footer>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js</script>
   <script>
-    // Dark/Light theme toggle
-    function toggleTheme(){ document.body.classList.toggle('dark-mode'); }
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
-    }, {threshold: 0.1});
-    document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-    // Collapsible cards on mobile (tap to expand)
-    function setupCardExpand(){
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card=>{
-        card.addEventListener('click', ()=>{
-          if(window.innerWidth < 768){ card.classList.toggle('shadow-lg'); }
-        });
+    // Intersection Observer for section reveal
+    const reveal = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); }
       });
-    }
-    setupCardExpand();
+    }, {threshold:0.12});
+    document.querySelectorAll('section').forEach(sec=>reveal.observe(sec));
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const setActive = ()=>{
+      let current = '';
+      sections.forEach(sec=>{
+        const top = sec.offsetTop - 120;
+        if(scrollY >= top) current = sec.id;
+      });
+      navLinks.forEach(l=>{
+        l.classList.toggle('active', l.getAttribute('href') === '#'+current);
+      });
+    };
+    window.addEventListener('scroll', setActive);
+
+    // Theme toggle with persistence
+    const body = document.body;
+    const themeBtn = document.getElementById('themeBtn');
+    const themeText = document.getElementById('themeText');
+    const stored = localStorage.getItem('theme');
+    if(stored === 'light'){ body.classList.add('light'); themeText.textContent='Dark'; themeBtn.innerHTML='<i class="fa-regular fa-moon me-1"></i>Dark'; }
+    else { themeText.textContent='Light'; themeBtn.innerHTML='<i class="fa-regular fa-sun me-1"></i>Light'; }
+
+    themeBtn.addEventListener('click', ()=>{
+      body.classList.toggle('light');
+      const isLight = body.classList.contains('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      if(isLight){ themeBtn.innerHTML='<i class="fa-regular fa-moon me-1"></i>Dark'; }
+      else{ themeBtn.innerHTML='<i class="fa-regular fa-sun me-1"></i>Light'; }
+    });
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
