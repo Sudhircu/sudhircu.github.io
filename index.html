@@ -1,510 +1,313 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sudhir C — Senior Manager in Cybersecurity, Risk & Compliance. 17+ years across Banking, IT, ITES & Manufacturing.">
-  <title>Sudhir C | Cybersecurity · Risk & Compliance</title>
-
-  <!-- Bootstrap 5 (CSS) -->
-  https://cdn.jsdelivr.net
-  https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
-
-  <!-- Font Awesome (Icons) -->
-  https://cdnjs.cloudflare.com
-  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
-
-  <!-- Inter font -->
-  https://fonts.gstatic.com
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&displayon (ensure it’s inside script so it won’t render) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Sudhir C",
-    "jobTitle":"Senior Manager - Cybersecurity, Risk & Compliance",
-    "email":"mailto:sudhir.cu@gmail.com",
-    "url":"https://sudhircu.github.io/",
-    "sameAs":["https://www.linkedin.com/in/sudhir-c2022/"],
-    "knowsAbout":["ISO 27001","ISO 22301","RBI Cybersecurity Framework","Risk Assessments","BCP/DR"],
-    "alumniOf":{"@type":"CollegeOrUniversity","name":"Bangalore University"}
-  }
-  </script>
-
-  <style>
-    /* ===== Theme tokens ===== */
-    :root{
-      --bg: #f8fafc;         /* page */
-      --surface: #ffffff;    /* cards */
-      --text: #0f172a;       /* primary text */
-      --muted: #475569;      /* secondary text */
-      --primary: #0ea5e9;    /* accent blue */
-      --accent: #0f172a;     /* navbar/footer dark */
-      --border: rgba(2,6,23,0.08);
-      --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
-      --link: #0369a1;
-      --badge-bg: #eef6ff;
-      --badge-border: #cce4ff;
-      --focus: #93c5fd;
-    }
-    .theme-dark{
-      --bg: #0b1220;
-      --surface: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --primary: #60a5fa;
-      --accent: #0b1220;
-      --border: rgba(255,255,255,0.12);
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --link: #93c5fd;
-      --badge-bg: #172036;
-      --badge-border: #1f2a44;
-      --focus: #93c5fd;
-    }
-
-    /* ===== Base ===== */
-    html{ scroll-behavior: smooth; }
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a{ color: var(--link); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-    :focus-visible{ outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
-
-    /* ===== Navbar ===== */
-    .navbar{
-      background: var(--accent);
-      border-bottom: 1px solid var(--border);
-    }
-    .navbar .navbar-brand, .navbar .nav-link, .navbar .btn{
-      color: #e5e7eb;
-    }
-    .navbar .nav-link.active, .navbar .nav-link:hover{ color: var(--primary); }
-
-    /* ===== Layout ===== */
-    .container-narrow{ max-width: 900px; }
-    .section{
-      padding: 64px 0;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .section.visible{ opacity:1; transform: translateY(0); }
-    .section-title{ font-weight: 700; margin-bottom: 20px; }
-    .section-subtitle{ color: var(--muted); margin-bottom: 24px; }
-
-    /* ===== Cards ===== */
-    .card-clean{
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    /* ===== Hero ===== */
-    .hero{ padding: 96px 0 48px; }
-    .hero .lead{ color: var(--muted); }
-
-    /* ===== Lists & badges ===== */
-    .list-compact{ margin: 0; padding-left: 1rem; }
-    .list-compact li{ margin-bottom: .5rem; }
-    .badge-pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; margin:6px 6px 0 0;
-      border-radius: 999px;
-      background: var(--badge-bg);
-      border: 1px solid var(--badge-border);
-      color: var(--text);
-      font-weight: 600; font-size: .9rem;
-    }
-    .badge-pill .dot{ width:8px;height:8px;border-radius:50%;background: var(--primary); }
-
-    /* ===== Footer ===== */
-    footer{ background: var(--accent); color: #e5e7eb; padding: 28px 0; }
-
-    /* ===== Utilities ===== */
-    .muted{ color: var(--muted); }
-    .divider{ border-top: 1px solid var(--border); }
-    .spacer-16{ height: 16px; }
-
-    /* ===== Print ===== */
-    @media print {
-      .navbar, .theme-toggle { display: none !important; }
-      body{ background: #ffffff; color: #000; }
-      .card-clean{ box-shadow: none; border-color: #ddd; }
-      a{ color: #000; text-decoration: none; }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<title>Sudhir C - Cybersecurity, Risk &amp; Compliance</title>
+<link href="assets/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- Font Awesome icons (free version)-->
+<script crossorigin="anonymous" src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css"/>
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="css/styles.css" rel="stylesheet"/>
+<style>
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+/* Dark theme styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+body.dark-mode .badge {
+    opacity: 0.9;
+}
+/* Toggle button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+<style>
+html { scroll-behavior: smooth; }
+.navbar { position: sticky; top: 0; z-index: 1030; }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
 </head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Primary">
-    <div class="container">
-      <a class="navbarC</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars" aria-hidden="true"></i></span>
-      </button>
-      <div id="nav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#    <li class="nav-item">#experienceExperience</a></li>
-          <li class="nav-item"><a class="nav-linkn</a></li>
-          <li class="nav-item"><a class="lls</a></li>
-          <li class="nav-item">#certificationsCertifications</a></li>
-          <li class="nav-item">#interestsInterests</a></li>
-          <li class="nav-item ms-lg-3">
-            <button id="themeBtn" class="btn btn-outline-light btn-sm theme-toggle" type="button" aria-label="Toggle color theme">
-              <i class="fa-regular fa-sun me-1"></i><span id="themeText">Light</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header id="top" class="hero">
-    <div class="container container-narrow">
-      <div class="card-clean p-4 p-md-5">
-        <div class="row g-4 align-items-start">
-          <div class="col-lg-8">
-            <h1 class="fw-bold mb-2">Senior Manager — Cybersecurity, Risk & Compliance</h1>
-            <p class="lead mb-3">
-              17+ years across Banking, IT, ITES & Manufacturing. Expertise in ISO 27001, ISO 22301, RBI Cybersecurity Framework,
-              BCP/DR, risk assessments & cybersecurity awareness. Driving “Beyond Compliance,” stronger security posture & business resilience via robust governance frameworks.
+<body id="page-top">
+<button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+<a class="navbar-brand js-scroll-trigger" href="#page-top">
+<span class="d-block d-lg-none">Sudhir C</span>
+<span class="d-none d-lg-block"><img alt="..." class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.png"/></span>
+</a>
+<button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Certifications</a></li>
+</ul>
+</div>
+</nav>
+<!-- Page Content-->
+<div class="container-fluid p-0">
+<!-- About-->
+<section class="resume-section py-3 fade-in fade-in" id="about">
+<div class="resume-section py-3 fade-in-content">
+<h1 class="mb-0">Sudhir C</h1>
+<div class="subheading mb-3">Senior Manager - Cybersecurity | Risk &amp; Compliance, Bangalore, India | sudhir.cu@gmail.com 
+<p>
+<span>MCA | CISM | CEH | CCMP | CDPO | ISO 27001 LA | CSSBB | CERTIFIED CYBER MENTOR</span>
+</p> </div>
+  <p class="lead mb-3" style="text-align: justify;">Senior IT and Information Security professional with 17+ years of experience in IT, Information Security, Risk & Compliance across Banking, IT, ITES, and Manufacturing sectors. Proven expertise in implementing and managing ISO 27001, ISO 22301, RBI Cybersecurity Framework, BCP/DR strategies, Risk Assessments, and Cybersecurity Awareness Programs. Adept at driving "Beyond Compliance" initiatives, strengthening security posture, and ensuring business resilience through robust governance frameworks.</p>
+<div class="social-icons">
+<a class="social-icon" href="https://www.linkedin.com/in/sudhir-c2022/"><i class="fab fa-linkedin-in"></i></a>
+<a class="social-icon" href="https://sudhircu.github.io/"><i class="fab fa-github"></i></a>
+</div>
+<a class="btn btn-primary mt-3" download="Sudhir_C_Resume.pdf" href="Sudhir_C_MCA_CISM_CEH_17yrs_v26.pdf">Download Resume</a></div>
+</section>
+<hr class="m-0"/>
+<!-- Experience-->
+<section class="resume-section py-3 fade-in fade-in" id="experience">
+<div class="resume-section py-3 fade-in-content"><h2 class="mb-3">Experience</h2><div class="d-flex flex-column flex-md-row justify-content-between mb-3"><div class="flex-grow-1"><h3 class="mb-0">Senior Manager - Risk &amp; Compliance, Cybersecurity</h3><div class="subheading mb-3">IFTAS (RBI Subsidiary)</div><p>Leading ISO 27001, Implementing ISO 22301 BCMS, RBI Framework, Risk Assessments, and Beyond Compliance Initiatives.</p></div><div class="flex-shrink-0"><span class="text-primary">Mar 2025 - Present</span></div></div><div class="d-flex flex-column flex-md-row justify-content-between mb-3"><div class="flex-grow-1"><h3 class="mb-0">Manager - IT, Information Security</h3><div class="subheading mb-3">ICT Service Management (Wistron)</div><p>Spearheaded Information Security division, ensuring compliance with ISO 27001, NIST CSF, PCI DSS, and CMMI frameworks.</p></div><div class="flex-shrink-0"><span class="text-primary">Jul 2023 – Dec 2024</span></div></div><div class="d-flex flex-column flex-md-row justify-content-between mb-3"><div class="flex-grow-1"><h3 class="mb-0">Senior Manager - Global Cybersecurity</h3><div class="subheading mb-3">State Street Corporation</div><p>Led First Line of Risk & Controls (FLRC); aligned policies with NIST CSF, ISO 27001, and GDPR including Governance, Risk Management, and Compliance initiatives; supported global regulatory audits (FFIEC, ARPA, HKMA, DORA,
+SOC2, NFA, CHAPS etc.,).</p></div><div class="flex-shrink-0"><span class="text-primary">Sep 2022 – Jul 2023</span></div></div><div class="d-flex flex-column flex-md-row justify-content-between mb-3"><div class="flex-grow-1"><h3 class="mb-0">Manager - IT, Information Security</h3><div class="subheading mb-3">ICT Service Management (Wistron)</div><p>Led and Implemented ISO 27001, NIST, PCI DSS, OT Security and CMMI frameworks. Built scalable governance and risk management frameworks, including KRIs, Risk Appetite, and control matrices.</p></div><div class="flex-shrink-0"><span class="text-primary">Jan 2016 – Sep 2022</span></div></div></div>
+</section>
+<hr class="m-0"/>
+<!-- Education-->
+<section class="resume-section py-3 fade-in fade-in" id="education">
+<div class="resume-section py-3 fade-in-content">
+<h2 class="mb-3">Education</h2>
+<div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+<div class="flex-grow-1">
+<h3 class="mb-0">Bangalore University</h3>
+<div class="subheading mb-3">Master of Computer Applications</div>
+<div>Computer Science</div>
+<p>First Class</p>
+</div>
+<div class="flex-shrink-0"><span class="text-primary">Jun 2005 - May 2008</span></div>
+</div>
+<div class="d-flex flex-column flex-md-row justify-content-between">
+<div class="flex-grow-1">
+<h3 class="mb-0">Bangalore University</h3>
+<div class="subheading mb-3">Bachelor of Science</div>
+<div>Computers, Mathematics & Electronics</div>
+<p>First Class</p>
+</div>
+<div class="flex-shrink-0"><span class="text-primary">Jun 2002 - May 2005</span></div>
+</div>
+</div>
+</section>
+<hr class="m-0"/>
+<!-- awards-->
+<section class="resume-section py-3 fade-in fade-in" id="awards">
+<div class="resume-section py-3 fade-in-content">
+<h2 class="mb-0">Certifications</h2>
+<div class="d-flex flex-column flex-md-row justify-content-between mb-0">
+<div class="flex-grow-1">
+<ul class="fa-ul mb-0"><li><span class="fa-li"><i class="fas fa-check text-success"></i></span>CISM</li><li><span class="fa-li"><i class="fas fa-check text-success"></i></span>CEH</li><li><span class="fa-li"><i class="fas fa-check text-success"></i></span>ISO 27001 Lead Auditor</li><li><span class="fa-li"><i class="fas fa-check text-success"></i></span>CCMP</li><li><span class="fa-li"><i class="fas fa-check text-success"></i></span>CDPO</li><li><span class="fa-li"><i class="fas fa-check text-success"></i></span>Lean Six Sigma Black Belt</li><li><span class="fa-li"><i class="fas fa-check text-success"></i></span>GDPR</li></ul></div>
+</div>
+</section>
+    
+<!-- Skills-->
+<section class="resume-section py-3 fade-in fade-in" id="skills">
+  <div class="resume-section py-3 fade-in-content">
+    <h2 class="mb-3">Skills & Competencies</h2>
+    <div class="row">
+      <!-- Leadership & Governance -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-user-tie"></i> Leadership & Governance</h5>
+            <p>
+              <span class="badge bg-primary">Leadership & Strategy</span>
+              <span class="badge bg-primary">Strategic Planning</span>
+              <span class="badge bg-primary">Governance & Board Reporting</span>
+              <span class="badge bg-primary">Budgeting & Cost Analysis</span>
+              <span class="badge bg-primary">RFP, RFQ, SLA, NDA</span>
+              <span class="badge bg-primary">Team Development</span>
+                <span class="badge bg-primary">Beyond Compliance</span>
             </p>
-            <div class="d-flex flex-wrap gap-3">
-              <span class="muted"><i class="fa-solid fa-location-dot me-2" aria-hidden="true"></i>Bangalore, India</span>
-              <a href="mailto:sudail.com<i class="fa-regular fa-envelope me-2" aria-hidden="true"></i>sudhir.cu@gmail.com</a>
-              https://www.linkedin.com/in/sudhir-c2022/<i class="fa-brands fa-linkedin me-2" aria-hidden="true"></i>LinkedIn</a>
-              <a href="https://sudhircu.github.io/" target="_blank" rel="noreferreridden="true"></i>Portfolio</a>
-            </div>
-            <div class="spacer-16"></div>
-            <div aria-label="Key Credentials">
-              <span class="badge-pill"><span class="dot"></span>MCA</span>
-              <span class="badge-pill"><span class="dot"></span>CISM</span>
-              <span class="badge-pill"><span class="dot"></span>CEH</span>
-              <span class="badge-pill"><span class="dot"></span>CCMP</span>
-              <span class="badge-pill"><span class="dot"></span>CDPO</span>
-              <span class="badge-pill"><span class="dot"></span>ISO 27001 LA</span>
-              <span class="badge-pill"><span class="dot"></span>CSSBB</span>
-              <span class="badge-pill"><span class="dot"></span>Certified Cyber Mentor</span>
-            </div>
           </div>
-          <div class="col-lg-4">
-            <div class="card-clean p-4">
-              <h6 class="fw-semibold mb-2">Quick Actions</h6>
-              <div class="d-grid gap-2">
-                <a class="btn btn-primary" href="Sudhir_C_MCA_CISM_CEH_17yrs_v26.pdf" target="_blank" rel" aria-hidden="true"></i>Download Resume
-                </a>
-                #contact
-                  <i class="fa-solid fa-paper-plane me-2" aria-hidden="true"></i>Get in Touch
-                </a>
-              </div>
-            </div>
-          </div>
-        </div> <!-- row -->
-      </div> <!-- card -->
-    </div> <!-- container -->
-  </header>
-
-  <!-- About -->
-  <section id="about" class="section" aria-labelledby="about-title">
-    <div class="container container-narrow">
-      <h2 id="about-title" class="section-title">About</h2>
-      <p class="section-subtitle">
-        Senior IT & Information Security professional experienced in implementing and governing ISO 27001, ISO 22301, RBI frameworks, BCP/DR strategies, risk assessments, and cyber awareness programs. Focused on outcome-driven controls and executive-ready reporting.
-      </p>
-      <div class="divider"></div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="section" aria-labelledby="experience-title">
-    <div class="container container-narrow">
-      <h2 id="experience-title" class="section-title">Experience</h2>
-
-      <div class="card-clean p-4 mb-3">
-        <div class="d-flex justify-content-between flex-wrap">
-          <div>
-            <h5 class="fw-semibold mb-1">Senior Manager — Risk & Compliance, Cybersecurity</h5>
-            <div class="muted">IFTAS (RBI Subsidiary)</div>
-          </div>
-          <div class="muted">Mar 2025 – Present</div>
         </div>
-        <ul class="list-compact mt-2">
-          <li>Leading ISO 27001; implementing ISO 22301 BCMS; RBI Framework; enterprise risk assessments.</li>
-          <li>Driving “Beyond Compliance” initiatives and KRIs for executive reporting.</li>
-        </ul>
       </div>
-
-      <div class="card-clean p-4 mb-3">
-        <div class="d-flex justify-content-between flex-wrap">
-          <div>
-            <h5 class="fw-semibold mb-1">Manager — IT, Information Security</h5>
-            <div class="muted">ICT Service Management (Wistron)</div>
+   <!-- Cybersecurity Technologies -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-lock"></i> Cybersecurity Technologies</h5>
+            <p>
+              <span class="badge bg-info">SIEM (Splunk, LogRhythm)</span>
+              <span class="badge bg-info">EDR, XDR, DLP, DSPM</span>
+              <span class="badge bg-info">AD, IAM, MFA, SSO</span>
+              <span class="badge bg-info">Microsoft Defender, Intune</span>
+              <span class="badge bg-info">SailPoint, Okta</span>
+                   <span class="badge bg-info">Firewall & IDS/IPS</span>
+                <span class="badge bg-info">DR Automation (Continuity & Perpetuity)</span>
+            </p>
           </div>
-          <div class="muted">Jul 2023 – Dec 2024</div>
         </div>
-        <ul class="list-compact mt-2">
-          <li>Ensured compliance with ISO 27001, NIST CSF, PCI DSS, and CMMI.</li>
-          <li>Established governance, controls, and audit readiness.</li>
-        </ul>
       </div>
-
-      <div class="card-clean p-4 mb-3">
-        <div class="d-flex justify-content-between flex-wrap">
-          <div>
-            <h5 class="fw-semibold mb-1">Senior Manager — Global Cybersecurity</h5>
-            <div class="muted">State Street Corporation</div>
+      <!-- Risk & Compliance -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-shield-alt"></i> Risk & Compliance</h5>
+            <p>
+              <span class="badge bg-success">Risk Management Frameworks</span>
+              <span class="badge bg-success">Audits</span>
+              <span class="badge bg-success">Regulatory & Compliance </span>
+                <span class="badge bg-success">Information Security Management System </span>
+                <span class="badge bg-success">Business Continuity Management System</span>
+                <span class="badge bg-success">Third-Party Risk Management</span>
+              <span class="badge bg-success">Data Privacy (DPDPA)</span>
+                
+            </p>
           </div>
-          <div class="muted">Sep 2022 – Jul 2023</div>
         </div>
-        <ul class="list-compact mt-2">
-          <li>Led First Line of Risk & Controls (FLRC) aligned to NIST CSF, ISO 27001, GDPR.</li>
-          <li>Supported global regulatory audits (FFIEC, ARPA, HKMA, DORA, SOC2, NFA, CHAPS).</li>
-        </ul>
       </div>
-
-      <div class="card-clean p-4">
-        <div class="d-flex justify-content-between flex-wrap">
-          <div>
-            <h5 class="fw-semibold mb-1">Manager — IT, Information Security</h5>
-            <div class="muted">ICT Service Management (Wistron)</div>
+      <!-- Cybersecurity Operations -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-bug"></i> Cybersecurity Operations</h5>
+            <p>
+            <span class="badge bg-danger">ISO 27001, ISO 22301, RBI, NIST, GDPR, SOC2/3</span>
+                <span class="badge bg-danger">ISO 9001, ISO 14001, ISO 45001, ISO 15408, CMMI</span>
+              <span class="badge bg-danger">Vulnerability Management</span>
+                  <span class="badge bg-danger">Cyber Maturity Assessments</span>
+                  <span class="badge bg-danger">Vendor Security Risk Assessments</span>
+              <span class="badge bg-danger">Incident Management</span>
+              <span class="badge bg-danger">Threat Intelligence & Hunting</span>
+              <span class="badge bg-danger">Penetration Testing</span>
+            </p>
           </div>
-          <div class="muted">Jan 2016 – Sep 2022</div>
         </div>
-        <ul class="list-compact mt-2">
-          <li>Led ISO 27001, NIST, PCI DSS, OT Security and CMMI implementations.</li>
-          <li>Built KRIs, risk appetite, and control matrices.</li>
-        </ul>
       </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="section" aria-labelledby="education-title">
-    <div class="container container-narrow">
-      <h2 id="education-title" class="section-title">Education</h2>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-bold mb-1">Bangalore University — Master of Computer Applications (MCA)</h6>
-            <div class="muted">Computer Science · First Class · Jun 2005 – May 2008</div>
+      <!-- Tools & Automation -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-tools"></i> Tools & Automation</h5>
+            <p>
+              <span class="badge bg-secondary">Power BI</span>
+              <span class="badge bg-secondary">M365, SharePoint</span>
+              <span class="badge bg-secondary">ServiceDeskPlus</span>
+              <span class="badge bg-secondary">Jira, Confluence, Archer, Aspia</span>
+              <span class="badge bg-secondary">CI/CD (Jenkins, Git)</span>
+            </p>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-bold mb-1">Bangalore University — Bachelor of Science</h6>
-            <div class="muted">Computers, Mathematics & Electronics · First Class · Jun 2002 – May 2005</div>
+      </div>
+      <!-- Programming & Emerging Tech -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-code"></i> Programming & Emerging Tech</h5>
+            <p>
+              <span class="badge bg-dark">HTML, CSS, JavaScript</span>
+              <span class="badge bg-dark">Java, C, C++</span>
+              <span class="badge bg-dark">AI/ML in Cybersecurity</span>
+              <span class="badge bg-dark">Secure Coding</span>
+                <span class="badge bg-dark">Vibe Coding</span>
+            </p>
+          </div>
+        </div>
+      </div>
+ <!-- Cloud & Infrastructure -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-cloud"></i> Cloud & Infrastructure</h5>
+            <p>
+              <span class="badge bg-warning text-dark">Azure</span>
+              <span class="badge bg-warning text-dark">AWS</span>
+              <span class="badge bg-warning text-dark">Zero Trust Architecture</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Process Excellence -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-project-diagram"></i> Process Excellence</h5>
+            <p>
+              <span class="badge bg-light text-dark">Agile, ITIL</span>
+              <span class="badge bg-light text-dark">Metrics & KPIs</span>
+              <span class="badge bg-light text-dark">Business Continuity & DRP</span>
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="section" aria-labelledby="skills-title">
-    <div class="container container-narrow">
-      <h2 id="skills-title" class="section-title">Skills & Competencies</h2>
-
-      <div class="row g-3">
-        <div class="col-md-6 col-lg-4">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-semibold">Leadership & Governance</h6>
-            <ul class="list-compact mt-2">
-              <li>Leadership & Strategy · Strategic Planning</li>
-              <li>Governance & Board Reporting</li>
-              <li>Budgeting & Cost Analysis · Team Development</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-semibold">Risk & Compliance</h6>
-            <ul class="list-compact mt-2">
-              <li>Risk Frameworks · Internal Audits & Risk Registers</li>
-              <li>PCI-DSS · GDPR · SOC2/3 · ISO 27001 · ISO 22301 · RBI</li>
-              <li>TPRM · Data Privacy (DPDPA)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-semibold">Security Technologies</h6>
-            <ul class="list-compact mt-2">
-              <li>SIEM (LogRhythm, Splunk, ManageEngine)</li>
-              <li>Endpoint (EDR, XDR, DLP)</li>
-              <li>IAM · MFA · SSO · Purview · Defender · Intune</li>
-              <li>Archer · SailPoint · Okta</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-semibold">Cloud & Infrastructure</h6>
-            <ul class="list-compact mt-2">
-              <li>Azure · AWS · GCP · Zero Trust</li>
-              <li>Firewall & IDS/IPS · OT Security · VDI · VPN</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-semibold">Cybersecurity Operations</h6>
-            <ul class="list-compact mt-2">
-              <li>Vuln Mgmt (Nessus, Rapid7, Qualys, OpenVAS)</li>
-              <li>Threat Intel (MITRE, IOC)</li>
-              <li>Incident Response · RCA · Threat Hunting</li>
-              <li>PT/VA · Secure SDLC · OWASP · SonarQube</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-semibold">Tools & Automation</h6>
-            <ul class="list-compact mt-2">
-              <li>Power BI · M365 · SharePoint</li>
-              <li>ServiceNow · ServiceDesk Plus</li>
-              <li>Jira · Confluence · CI/CD (Jenkins, Git, Bitbucket)</li>
-              <li>Compliance Automation</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-semibold">Programming & Emerging Tech</h6>
-            <ul class="list-compact mt-2">
-              <li>HTML · DHTML · XML · ASP</li>
-              <li>JavaScript · CSS · C · C++ · Java · VB.Net · VB</li>
-              <li>AI/ML in Cybersecurity · Secure Coding</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="card-clean p-4 h-100">
-            <h6 class="fw-semibold">Process Excellence</h6>
-            <ul class="list-compact mt-2">
-              <li>Agile · Waterfall · ITIL · RACI</li>
-              <li>Metrics & KPIs · Dashboards</li>
-              <li>Business Continuity & DRP</li>
-              <li>Project & Operational Planning</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications -->
-  <section id="certifications" class="section" aria-labelledby="certifications-title">
-    <div class="container container-narrow">
-      <h2 id="certifications-title" class="section-title">Certifications</h2>
-      <div class="card-clean p-3">
-        <div class="d-flex flex-wrap">
-          <span class="badge-pill"><span class="dot"></span>CISM — Certified Information Security Manager</span>
-          <span class="badge-pill"><span class="dot"></span>CEH — Certified Ethical Hacker v12</span>
-          <span class="badge-pill"><span class="dot"></span>ISO 27001 LA — Lead Auditor</span>
-          <span class="badge-pill"><span class="dot"></span>CDPO — Certified Data Protection Officer</span>
-          <span class="badge-pill"><span class="dot"></span>CCMP — Cybercrisis Management Professional</span>
-          <span class="badge-pill"><span class="dot"></span>CISSP (principles & secure design)</span>
-          <span class="badge-pill"><span class="dot"></span>CompTIA CASP+ (Risk, BC, Forensics)</span>
-          <span class="badge-pill"><span class="dot"></span>Operational Excellence Foundation</span>
-          <span class="badge-pill"><span class="dot"></span>Root Cause & Business Analysis</span>
-          <span class="badge-pill"><span class="dot"></span>Emergency Response & First Aid</span>
-          <span class="badge-pill"><span class="dot"></span>CCM — Certified Cyber Mentor</span>
-          <span class="badge-pill"><span class="dot"></span>CCNA · IT Security Concepts · Networking Components</span>
-          <span class="badge-pill"><span class="dot"></span>IMS 9001/14001/45001 — Internal Auditor</span>
-          <span class="badge-pill"><span class="dot"></span>Lean Six Sigma Black Belt · Green Belt</span>
-          <span class="badge-pill"><span class="dot"></span>GDPR & Legal Compliance</span>
-          <span class="badge-pill"><span class="dot"></span>AWS — Cloud Practitioner</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interests -->
-  <section id="interests" class="section" aria-labelledby="interests-title">
-    <div class="container container-narrow">
-      <h2 id="interests-title" class="section-title">Interests</h2>
-      <div class="card-clean p-4">
-        Cybersecurity awareness storytelling, BCMS & DR drills, dashboarding with Power BI, and mentoring teams on secure coding & digital hygiene.
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section" aria-labelledby="contact-title">
-    <div class="container container-narrow">
-      <h2 id="contact-title" class="section-title">Contact</h2>
-      <div class="card-clean p-4">
-        <p class="mb-2"><i class="fa-regular fa-envelope me-2" aria-hidden="true"></i><a href="mailto:sudhir.comsudhir.cu@gmail.com</a></p>
-        <p class="mb-0"><i class="fa-brands fa-linkedin me-2" aria-hidden="true"></i><a href="https://www.linkedin.com/in/sudhir-c2022/" target="_blank" rela></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container text-center">
-      <small>© <span id="year"></span> Sudhir C · Cybersecurity · Risk & Compliance</small>
-    </div>
-  </footer>
-
-  <!-- JS (Bootstrap + page scripts) -->
-  https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js</script>
-  <script>
-    // Reveal sections on scroll
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); } });
-    },{threshold:0.1});
-    document.querySelectorAll('.section').forEach(s=>observer.observe(s));
-
-    // Active nav highlighting
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = [...document.querySelectorAll('section[id]')];
-    function setActive(){
-      let current = '';
-      sections.forEach(sec=>{
-        if(window.scrollY >= sec.offsetTop - 140) current = sec.id;
-      });
-      navLinks.forEach(l=> l.classList.toggle('active', l.getAttribute('href') === '#'+current));
-    }
-    window.addEventListener('scroll', setActive);
-    setActive();
-
-    // Theme toggle with persistence
-    const body = document.body;
-    const btn = document.getElementById('themeBtn');
-    const label = document.getElementById('themeText');
-    const stored = localStorage.getItem('theme');
-
-    function setTheme(dark){
-      if(dark){ body.classList.add('theme-dark'); btn.innerHTML='<i class="fa-regular fa-moon me-1"></i>Dark'; label.textContent='Dark'; }
-      else{ body.classList.remove('theme-dark'); btn.innerHTML='<i class="fa-regular fa-sun me-1"></i>Light'; label.textContent='Light'; }
-    }
-    setTheme(stored === 'dark');
-
-    btn.addEventListener('click', ()=>{
-      const nowDark = !body.classList.contains('theme-dark');
-      setTheme(nowDark);
-      localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+  </div>
+</section>
+<hr class="m-0"/>
+<!-- Interests-->
+<section class="resume-section py-3 fade-in fade-in" id="interests">
+<div class="resume-section py-3 fade-in-content">
+<h2 class="mb-3">Interests</h2>
+<p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+<p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+</div>
+</section>
+</div>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<script>
+// Dark/Light theme toggle
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+}
+// Add collapsible functionality for cards on mobile
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+            card.classList.toggle('expanded');
+        }
     });
-
-    // Current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+});
+</script>
+<script>
+const sections = document.querySelectorAll('.resume-section');
+function revealOnScroll() {
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      section.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
 </body>
 </html>
